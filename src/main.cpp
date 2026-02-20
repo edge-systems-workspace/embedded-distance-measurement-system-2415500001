@@ -22,3 +22,16 @@ void setup(){
     pinMode(echo_pin, INPUT);
     Serial.begin(9600);
 }
+/**
+ * @brief Arduino main loop function.
+ * @details Sends a trigger pulse to the HC-SR04, measures the echo pulse
+ *          duration, converts the duration to distance in centimeters,
+ *          and prints the result to the Serial Monitor.
+ * @return void
+ */
+void loop(){
+    digitalWrite(trig_pin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trig_pin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trig_pin, LOW);
